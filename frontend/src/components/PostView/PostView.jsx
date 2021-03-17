@@ -16,10 +16,9 @@ const PostView = () => {
     setState('update');
   };
 
-  const handleDelete = () => {
-    deletePost(id)
-      .then(() => history.goBack())
-      .catch(() => { })
+  const handleDelete = async () => {
+    await deletePost(id);
+    history.replace('/');
   };
 
   const setViewState = () => {
@@ -46,7 +45,7 @@ const PostView = () => {
         <div className="post-view__controls">
           <button className="action-btn" onClick={handleUpdate}>
             Изменить
-            </button>
+          </button>
           <button className="action-btn danger-btn" onClick={handleDelete}>
             Удалить
           </button>
