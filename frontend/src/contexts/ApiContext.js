@@ -24,6 +24,8 @@ export function ApiProvider(props) {
         throw new Error('Failed to load posts');
       }
 
+      data.sort((a,b) => b.created - a.created);
+
       setPosts(data);
     } catch (e) {
       setError(e.message);
