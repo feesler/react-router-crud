@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useApi from '../../hooks/useApi.js';
-import { useHistory, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import PostItem from '../PostItem/PostItem';
 import PostForm from '../PostForm/PostForm.jsx';
 
 const PostView = () => {
   const { id } = useParams();
-  let history = useHistory();
+  let navigate = useNavigate();
   const { posts, getPost, deletePost } = useApi();
   const [post, setPost] = useState(null);
   const [state, setState] = useState('view');
@@ -18,7 +18,7 @@ const PostView = () => {
 
   const handleDelete = async () => {
     await deletePost(id);
-    history.replace('/');
+    navigate.replace('/');
   };
 
   const setViewState = () => {

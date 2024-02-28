@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   Route,
-  Switch,
-  useHistory
+  Routes,
+  useNavigate,
 } from 'react-router-dom';
 import { ApiProvider } from './contexts/ApiContext.js';
 import Feed from './components/Feed/Feed.jsx';
@@ -11,22 +11,22 @@ import PostForm from './components/PostForm/PostForm.jsx';
 import './App.css';
 
 function App() {
-  let history = useHistory();
+  let navigate = useNavigate();
 
   const goBack = () => {
-    history.goBack();
+    navigate(-1);
   };
 
   return (
     <ApiProvider>
       <div className="feed">
-        <Switch>
+        <Routes>
           <Route path="/" exact component={Feed} />
           <Route path="/posts/new">
             <PostForm onDone={goBack} onCancel={goBack} />
           </Route>
           <Route path="/posts/:id" component={PostView} />
-        </Switch>
+        </Routes>
       </div>
     </ApiProvider>
   );
