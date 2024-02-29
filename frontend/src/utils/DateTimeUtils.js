@@ -32,7 +32,7 @@ export function formatTimePretty(date) {
   } else if (date instanceof Date) {
     time = date.getTime();
   } else {
-    throw new TypeError('Invalid type of parameter');
+    return null;
   }
 
   const now = Date.now();

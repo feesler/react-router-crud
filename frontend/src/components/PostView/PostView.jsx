@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import useApi from '../../hooks/useApi.js';
 import { useNavigate, useParams } from 'react-router';
+
+import useApi from '../../hooks/useApi.js';
+
 import PostItem from '../PostItem/PostItem';
-import PostForm from '../PostForm/PostForm.jsx';
+import PostForm from '../PostForm/PostForm';
 
 const PostView = () => {
   const { id } = useParams();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { posts, getPost, deletePost } = useApi();
   const [post, setPost] = useState(null);
   const [state, setState] = useState('view');
@@ -18,7 +19,7 @@ const PostView = () => {
 
   const handleDelete = async () => {
     await deletePost(id);
-    navigate.replace('/');
+    navigate('/');
   };
 
   const setViewState = () => {
@@ -35,7 +36,7 @@ const PostView = () => {
   }
 
   if (state === 'update') {
-    return <PostForm {...post} onDone={setViewState} onCancel={setViewState} />
+    return <PostForm {...post} onDone={setViewState} onCancel={setViewState} />;
   }
 
   if (state === 'view') {

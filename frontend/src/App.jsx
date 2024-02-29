@@ -11,7 +11,7 @@ import PostForm from './components/PostForm/PostForm.jsx';
 import './App.css';
 
 function App() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const goBack = () => {
     navigate(-1);
