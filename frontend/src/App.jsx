@@ -21,11 +21,12 @@ function App() {
     <ApiProvider>
       <div className="feed">
         <Routes>
-          <Route path="/" exact component={Feed} />
-          <Route path="/posts/new">
-            <PostForm onDone={goBack} onCancel={goBack} />
-          </Route>
-          <Route path="/posts/:id" component={PostView} />
+          <Route path="/" Component={Feed} />
+          <Route
+            path="/posts/new"
+            element={<PostForm onDone={goBack} onCancel={goBack} />}
+          />
+          <Route path="/posts/:id" Component={PostView} />
         </Routes>
       </div>
     </ApiProvider>
