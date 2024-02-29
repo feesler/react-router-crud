@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "forever": "^1.0.0",
-    "koa": "^2.7.0",
-    "koa-body": "^4.1.0",
+    "forever": "^1.0.1",
+    "koa": "^2.15.0",
+    "koa-body": "^4.2.0",
     "koa-router": "^7.4.0",
     "koa2-cors": "^2.0.6"
   }
