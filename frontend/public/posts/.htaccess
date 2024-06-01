@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /netology/09/react-router-crud/posts/
+RewriteBase /projects/netology/09/react-router-crud/posts/
 
 RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
 

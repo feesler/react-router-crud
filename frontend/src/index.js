@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals.js';
 
 ReactDOM.render(
   <React.StrictMode>
